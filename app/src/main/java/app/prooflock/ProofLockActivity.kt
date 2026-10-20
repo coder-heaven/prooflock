@@ -45,10 +45,12 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
+import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
@@ -108,6 +110,7 @@ class ProofLockActivity : ComponentActivity() {
 }
 
 @Composable
+@OptIn(ExperimentalMaterial3Api::class)
 private fun ProofLock() {
     val context = LocalContext.current
     val prefs = remember { context.getSharedPreferences("prooflock", Context.MODE_PRIVATE) }
@@ -170,6 +173,7 @@ private fun ProofLock() {
 }
 
 @Composable
+@OptIn(ExperimentalMaterial3Api::class)
 private fun AppTopBar(tab: String) {
     TopAppBar(
         title = {
@@ -186,6 +190,7 @@ private fun AppTopBar(tab: String) {
 }
 
 @Composable
+@OptIn(ExperimentalMaterial3Api::class)
 private fun NavItem(route: String, label: String, icon: androidx.compose.ui.graphics.vector.ImageVector, selected: String, onClick: () -> Unit) {
     NavigationBarItem(
         selected = route == selected,
