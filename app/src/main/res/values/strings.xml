@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ProofLock</string>
+    <string name="accessibility_service_description">Protects distracting apps during an active ProofLock commitment</string>
 </resources>
