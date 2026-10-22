@@ -346,4 +346,4 @@ private fun timeLabel(): String = SimpleDateFormat("h:mm a", Locale.US).format(D
 private fun dayLabel(offset: Int): String = SimpleDateFormat("EEE, MMM d", Locale.US).format(Date(System.currentTimeMillis() - offset * 86_400_000L))
 
 @Composable
-private fun proofLockColors() = androidx.compose.material3.darkColorScheme(primary = Emerald, onPrimary = Midnight, background = Midnight, surface = Panel, onBackground = Ink, onSurface = Ink, onSurfaceVariant = Muted)
+internal fun proofLockColors() = androidx.compose.material3.darkColorScheme(primary = Emerald, onPrimary = Midnight, background = Midnight, surface = Panel, onBackground = Ink, onSurface = Ink, onSurfaceVariant = Muted)
