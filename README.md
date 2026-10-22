@@ -11,16 +11,20 @@ The product idea is simple: choose one activity, complete it, submit a **fresh c
 - **Proof** — show that the real-world activity happened.
 - **Lock** — keep distracting phone access unavailable until the commitment is complete.
 
-## MVP direction
+## v0.2 direction
 
-1. Create one daily activity.
-2. Keep the user in a protected phone mode while the activity is pending.
+1. Choose multiple habits including movement, reading, sketching, meditation, home tasks, lessons, and online focus tasks.
+2. Keep the user in a protected phone mode while active habits are pending.
 3. Capture proof only through the camera.
-4. Check that the capture happened today.
-5. Unlock the user's chosen app group after proof passes.
-6. Add optional AI vision verification after the local flow is validated.
+4. Send proof to an optional backend AI verifier with fail-closed results.
+5. Choose distracting apps from installed launchable apps and suggested categories.
+6. Escalate reminders and support consent-based screen sharing for online tasks.
 
-The current first slice includes a redesigned onboarding flow, Today dashboard, streak/history view, settings, protected-state dashboard, and fresh camera proof capture. Android Accessibility enforcement and server-side AI verification are intentionally separate follow-up milestones so the basic user experience can be tested first.
+The current slice includes a health-style multi-habit dashboard, habit history, app selection, Accessibility protection wiring, escalating reminders, a screen-sharing foreground-service flow, and a backend with nine AI capability slots. Each slot has a primary route and two backups. Configure `PROOFLOCK_API_URL` to connect the APK to the backend; without it, the APK uses clearly labelled local prototype mode.
+
+## Backend
+
+The online verifier is in `backend/`. It accepts fresh camera evidence and routes the `habit_proof` check through one primary AI route and two backups. The other eight capability slots are defined for future specialized checks without putting provider secrets in the APK. See [backend/README.md](backend/README.md).
 
 ## Direct APK release
 
@@ -38,7 +42,7 @@ For a signed APK, configure a release signing block in `app/build.gradle.kts` us
 ./gradlew assembleRelease
 ```
 
-The GitHub workflow lives at `.github/workflows/android-release.yml`. It uses Java 17 on the runner, uploads a debug APK artifact, and publishes a GitHub Release whenever a `v*` tag is pushed.
+The GitHub workflow lives at `.github/workflows/android-release.yml`. It uses Java 17 on the runner, uploads a debug APK artifact, and publishes a GitHub Release whenever a `v*` tag is pushed. Add `PROOFLOCK_API_URL` as a GitHub Actions variable when building an online-enabled APK.
 
 ## Development
 

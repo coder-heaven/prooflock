@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: prooflock-ai
+    runtime: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: PROOFLOCK_AI_TOKEN
+        sync: false
+      - key: PROOFLOCK_AI_HABIT_PROOF_URL
+        sync: false
+      - key: PROOFLOCK_AI_HABIT_PROOF_MODEL
+        sync: false
+      - key: PROOFLOCK_AI_HABIT_PROOF_BACKUP_1_URL
+        sync: false
+      - key: PROOFLOCK_AI_HABIT_PROOF_BACKUP_1_MODEL
+        sync: false
+      - key: PROOFLOCK_AI_HABIT_PROOF_BACKUP_2_URL
+        sync: false
+      - key: PROOFLOCK_AI_HABIT_PROOF_BACKUP_2_MODEL
+        sync: false

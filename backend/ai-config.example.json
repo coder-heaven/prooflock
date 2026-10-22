@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "slots": {
+    "habit_proof": { "primary": "route-habit-primary", "backups": ["route-habit-backup-1", "route-habit-backup-2"] },
+    "capture_quality": { "primary": "route-quality-primary", "backups": ["route-quality-backup-1", "route-quality-backup-2"] },
+    "activity_classification": { "primary": "route-classify-primary", "backups": ["route-classify-backup-1", "route-classify-backup-2"] },
+    "freshness_check": { "primary": "route-freshness-primary", "backups": ["route-freshness-backup-1", "route-freshness-backup-2"] },
+    "tamper_check": { "primary": "route-tamper-primary", "backups": ["route-tamper-backup-1", "route-tamper-backup-2"] },
+    "online_task_check": { "primary": "route-online-primary", "backups": ["route-online-backup-1", "route-online-backup-2"] },
+    "screen_session_check": { "primary": "route-screen-primary", "backups": ["route-screen-backup-1", "route-screen-backup-2"] },
+    "consistency_check": { "primary": "route-consistency-primary", "backups": ["route-consistency-backup-1", "route-consistency-backup-2"] },
+    "review_summary": { "primary": "route-summary-primary", "backups": ["route-summary-backup-1", "route-summary-backup-2"] }
+  },
+  "routes": {}
+}
